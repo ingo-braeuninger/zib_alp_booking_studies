@@ -1,2 +1,2 @@
-# Analytical List Page Booking for /DMO/SFLIGHT
+# Analytical List Page Booking for /DMO/FLIGHT
 ALP Sample
