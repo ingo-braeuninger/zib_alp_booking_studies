@@ -68,6 +68,8 @@ define view entity zc_alp_booking
       @UI.lineItem: [{ label: 'Connection ID', position: 50 }]
       @UI.selectionField: [{ position: 30 }]      
       connection_id,
+      
+      @UI.selectionField: [{ position: 50 }]            
       flight_date,
       @Semantics.amount.currencyCode: 'currency_code'
       flight_price,

@@ -28,7 +28,7 @@
     },
   {
       qualifier:    'Filter2Chart',
-      chartType:    #COLUMN,
+      chartType:    #DONUT,
       dimensions:   [ 'carrier_id' ],
       measures:     [ 'counter' ],
       dimensionAttributes: [
@@ -41,7 +41,7 @@
 
   {
       qualifier:    'Filter3Chart',
-      chartType:    #COLUMN,
+      chartType:    #AREA,
       dimensions:   [ 'connection_id' ],
       measures:     [ 'counter' ],
       dimensionAttributes: [
