@@ -1,0 +1,32 @@
+specVersion: '2.0'
+metadata:
+  name: 'zalpbookings'
+type: application
+framework:
+  name: SAPUI5
+  version: '1.85.2'
+  libraries: 
+    - name: sap.m
+    - name: sap.ushell
+    - name: sap.ui.core
+    - name: sap.f
+    - name: sap.ui.comp
+    - name: sap.ui.table
+    - name: sap.suite.ui.generic.template
+    - name: sap.ui.generic.app
+    - name: themelib_sap_fiori_3
+server:
+  customMiddleware:
+  - name: fiori-tools-proxy
+    afterMiddleware: compression
+    configuration:
+      backend:
+      - path: /sap
+        url: https://be5c5cfa-7d11-4433-82cc-ab85b7e3bb7e.abap.stagingaws.hanavlab.ondemand.com
+        scp: true
+        destination: abap-cloud-y02_00-0032
+  - name: fiori-tools-appreload
+    afterMiddleware: compression
+    configuration:
+     port: 35729
+     path: webapp
