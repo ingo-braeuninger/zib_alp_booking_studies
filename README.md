@@ -1,2 +1,2 @@
-# zib_alp_booking
+# Analytical List Page Booking for /DMO/SFLIGHT
 ALP Sample
