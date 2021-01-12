@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service zc_alp_booking_sd {
+  expose zc_alp_booking;
+}

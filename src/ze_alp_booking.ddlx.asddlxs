@@ -1,0 +1,142 @@
+@Metadata.layer: #CORE
+
+
+
+@UI.headerInfo: {
+  typeName:       'Bookings',
+  typeNamePlural: 'Bookings',
+  title:{ label: 'ALP Bookings', value: 'customer_id'},
+  description: { label: 'ALP Titel', value: 'customer_id' }
+}
+
+
+@UI.chart: [
+  /****************************************************************************************
+    Default chart in the content area of the page
+   ****************************************************************************************/
+  {
+      qualifier:    'Filter1Chart',
+      chartType:    #BAR,
+      dimensions:   [ 'customer_id' ],
+      measures:     [ 'counter' ],
+      dimensionAttributes: [
+        { dimension: 'customer_id', role: #CATEGORY }
+      ],
+      measureAttributes: [
+        { measure: 'counter', role: #AXIS_1, asDataPoint: true }
+      ]
+    },
+  {
+      qualifier:    'Filter2Chart',
+      chartType:    #COLUMN,
+      dimensions:   [ 'carrier_id' ],
+      measures:     [ 'counter' ],
+      dimensionAttributes: [
+        { dimension: 'carrier_id', role: #CATEGORY }
+      ],
+      measureAttributes: [
+        { measure: 'counter', role: #AXIS_1, asDataPoint: true }
+      ]
+    },
+
+  {
+      qualifier:    'Filter3Chart',
+      chartType:    #COLUMN,
+      dimensions:   [ 'connection_id' ],
+      measures:     [ 'counter' ],
+      dimensionAttributes: [
+        { dimension: 'connection_id', role: #CATEGORY }
+      ],
+      measureAttributes: [
+        { measure: 'counter', role: #AXIS_1, asDataPoint: true }
+      ]
+    },
+
+    {
+      description:  'Count by Customer',
+      chartType:    #COLUMN,
+      dimensions:   [ 'customer_id' ] ,
+      measures:     [ 'counter' ] ,
+      dimensionAttributes: [
+        { dimension: 'customer_id', role: #CATEGORY }
+      ],
+      measureAttributes: [
+        { measure: 'counter', role: #AXIS_1, asDataPoint: true }
+      ]
+    }
+  ]
+
+
+@UI.presentationVariant: [{
+      qualifier: 'Filter1', 
+      sortOrder: [ { by: 'counter', direction: #DESC } ],
+      visualizations: [
+        { type: #AS_CHART, qualifier: 'Filter1Chart' }
+      ]
+    },
+  {
+      qualifier: 'Filter2', 
+      sortOrder: [ { by: 'counter', direction: #DESC } ],
+      visualizations: [
+        { type: #AS_CHART, qualifier: 'Filter2Chart' }
+      ]
+  },
+  {
+      qualifier: 'Filter3', 
+      sortOrder: [ { by: 'counter', direction: #DESC } ],
+      visualizations: [
+        { type: #AS_CHART, qualifier: 'Filter3Chart' }
+      ]
+  },    
+  {
+    sortOrder: [{ by: 'counter', direction: #DESC }],
+    visualizations: [ { type: #AS_CHART }, { type: #AS_LINEITEM } ] 
+  }]
+
+annotate view zc_alp_booking with
+{
+
+  @UI.hidden: true
+  travel_id;
+
+  @UI.hidden: true
+  booking_id;
+
+  @UI.lineItem: [ { label: 'booking_date' } ]
+  booking_date;
+
+  @UI.lineItem: [ { label: 'Customer Id' } ]
+  customer_id;
+
+  @UI.lineItem: [ { label: 'carrier_id' } ]
+  carrier_id;
+
+  @UI.lineItem: [ { label: 'Customconnection_ider Id' } ]
+  connection_id;
+
+  @UI.lineItem: [ { label: 'flight_date' } ]
+  flight_date;
+
+  @UI.lineItem: [ { label: 'flight_price' } ]
+  flight_price;
+
+  @UI.lineItem: [ { label: 'currency_code' } ]
+  currency_code;
+
+  @UI.lineItem: [ { label: 'booking_status' } ]
+  booking_status;
+
+  @UI.lineItem: [ { label: 'last_changed_at' } ]
+  last_changed_at;
+
+  @UI.lineItem: [ { label: 'counter' } ]
+  counter;
+
+  /* Associations */
+  //  _Carrier;
+  //  _Connection;
+  //  _Customer;
+  //  _Travel;
+  //  customer_id;
+
+}
