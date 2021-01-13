@@ -143,7 +143,10 @@
                         "autoHide": false,
                         "condensedTableLayout": true,
                         "showGoButtonOnFilterBar": true,
-                        "smartVariantManagement": false
+                        "smartVariantManagement": false,
+                        "dataLoadSettings": {
+                            "loadDataOnAppLaunch": "always"
+                        }                        
                     }
                 },
                 "pages": {
