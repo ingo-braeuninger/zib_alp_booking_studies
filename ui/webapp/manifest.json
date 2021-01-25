@@ -142,7 +142,7 @@
                         "qualifier": "",
                         "autoHide": false,
                         "condensedTableLayout": true,
-                        "showGoButtonOnFilterBar": true,
+                        "showGoButtonOnFilterBar": false,
                         "smartVariantManagement": false,
                         "dataLoadSettings": {
                             "loadDataOnAppLaunch": "always"
